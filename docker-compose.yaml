@@ -5,3 +5,9 @@ services:
     command: ["gcloud", "beta", "emulators", "pubsub", "start", "--host-port=0.0.0.0:8085", "--project=test"]
     ports:
       - "8085:8085"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8085/v1/projects/nonsense/schemas" , "|", "exit", "1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
