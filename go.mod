@@ -3,7 +3,7 @@ module github.com/zak905/gcp-pub-sub-emulator-test-demo
 go 1.25.8
 
 require (
-	cloud.google.com/go/pubsub v1.51.0
+	cloud.google.com/go/pubsub v1.51.1
 	github.com/stretchr/testify v1.12.1
 	google.golang.org/api v0.295.0
 )
